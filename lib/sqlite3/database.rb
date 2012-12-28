@@ -581,7 +581,8 @@ Support for this will be removed in version 2.0.0.
     private
 
     def ordered_map_for columns, row
-      h = Hash[*columns.zip(row).flatten]
+      h = {}
+      columns.zip(row).each { |k, v| h[k] = v }
       row.each_with_index { |r, i| h[i] = r }
       h
     end

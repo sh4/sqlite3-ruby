@@ -16,6 +16,14 @@
 #define RBIGNUM_LEN(x) RBIGNUM(x)->len
 #endif
 
+#ifndef RSTRING_LEN
+#  define RSTRING_LEN(v) RSTRING(rb_String(v))->len
+#endif
+
+#ifndef RSTRING_PTR
+#  define RSTRING_PTR(v) RSTRING(rb_String(v))->ptr
+#endif
+
 #ifdef HAVE_RUBY_ENCODING_H
 #include <ruby/encoding.h>
 
